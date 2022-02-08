@@ -1,23 +1,12 @@
 #!/bin/env ruby
 # encoding: utf-8
-# name: pingpod.com Onebox Replays
+# name: PINGPOD Replay Onebox
 # version: 0.1
 # authors: PINGPOD Inc.
 
-
-register_css <<CSS
-
-.replay-video-container {
-  width: 100%;
-  padding: 10px 5%;
-  background-color: #ff0078;
-}
-
-CSS
-
 require "onebox"
 
-class Onebox::Engine::OneboxPingpodReplay
+class Onebox::Engine::PingpodReplayOnebox
   include Onebox::Engine
 
   def self.priority
@@ -40,7 +29,7 @@ class Onebox::Engine::OneboxPingpodReplay
     <<HTML
     <div class="onebox-pingpod-replay">
       <div class="replay-video-container">
-        <video width="90%" controls>
+        <video width="100%" controls>
           <source src="https://stream.mux.com/#{id}/high.mp4" type="video/mp4" />
         </video>
       </div>
